@@ -161,13 +161,12 @@ modo = st.sidebar.radio(
 # ----------------------------------------------------------
 
 if st.sidebar.button(
-    "Encerrar Sistema"
+    "Logout"
 ):
 
-    os.kill(
-        os.getpid(),
-        signal.SIGTERM
-    )
+    st.session_state["logado"] = False
+
+    st.rerun()
 
 # ==========================================================
 # FUNÇÃO MAPA
